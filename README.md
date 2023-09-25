@@ -10,9 +10,13 @@
 
           why :
           because need session accross nodes if one node is down app should not ask user to login again.
-          how : configure below 2 properties
+          how : configure below 2 properties and one pom depedency
           spring.session.store-type=jdbc
           spring.session.jdbc.initialize-schema=always
+          <dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-jdbc</artifactId>
+		</dependency>
           how to verifying :
           try login with 2 nodes-> and be down one nodes after and try to access home page.
   
